@@ -20,4 +20,12 @@ You may want to use it with a udev rule to make it automatic, for example, check
 
 ## AUR Package
 
-hold on bro im writing it rq
+```
+    paru -S ddcci-probe-git
+    # reload the udev rules if needed 
+    sudo udevadm control --reload
+    # run the script because the udev rule wont trigger until next drm change event
+    sudo ddcci-probe.sh
+```
+
+
