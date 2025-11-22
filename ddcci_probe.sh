@@ -23,3 +23,14 @@ for card in /sys/class/drm/*; do
         fi
     fi
 done
+
+sleep 0.5
+
+# fix permissions
+for bl in /sys/class/backlight/ddcci*/brightness; do
+    if [ -f "$bl" ]; then
+        echo "Fixing permissions for $bl"
+        chgrp video "$bl"
+        chmod g+w "$bl"
+    fi
+done
